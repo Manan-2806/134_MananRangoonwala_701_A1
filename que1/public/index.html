@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NodeJS</title>
+</head>
+<body>
+    <h1>Welcome To NodeJS</h1>
+
+    <button onclick="getHello()">Click Here</button>
+    <div id="result"></div>
+
+    <script>
+
+function getHello(){
+
+    fetch("/getHello")
+    .then(response => response.text())
+    .then(data=>{
+        document.getElementById("result").innerHTML = data;
+    })
+    .catch(error =>{
+        console.log("Error : " + error);
+    })
+}
+
+    </script>
+</body>
+
+</html>
